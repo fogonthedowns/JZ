@@ -1,0 +1,138 @@
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+<link href="http://www.justinzollars.com/apps/two.css" type="text/css" rel="stylesheet">
+<link href="http://www.justinzollars.com/apps/one.css" type="text/css" rel="stylesheet">
+
+<title>Clicker.io - ask questions and get live streaming answers on a mobile device</title>
+
+<style type="text/css">
+.hny-tskb { display: none; }
+</style>
+
+<style type="text/css">
+    h1 {
+        font-size: 36px;
+        font-weight: bold;
+        margin-bottom: 20px;
+    }
+    #big-iphone { float: right; }
+    .blue-bullets { margin: 3em 0; }
+    .blue-bullets li { font-size: 16px; margin: 1.5em 0;}
+</style>
+
+</head>
+<body class="en None webkit" style="min-height: 787px; ">
+<div style="display: none;" id="modal-behind">
+</div>
+<div style="display: none;" id="modal">
+    <div id="modal-box">
+        <a href="http://www.justinzollars.com" id="modal-x></a>
+        <h2 id="modal-title"></h2>
+        <div id="modal-content">
+        </div>
+    </div>
+</div>
+<div style="display: none;" id="modal-overlay" onclick="Modal.hide(); Event.stop(event); return false;">
+</div>
+<div id="floaters">
+</div>
+<div style="display:none" id="trash-can">
+</div>
+<div style="display:none" id="grave-yard">
+</div>
+<div style="display: none;" class="external-drop-indicator top">
+</div>
+<div style="display: none;" class="external-drop-indicator right">
+</div>
+<div style="display: none;" class="external-drop-indicator bottom">
+</div>
+<div style="display: none;" class="external-drop-indicator left">
+</div>
+<div style="display:none; margin-bottom: -10px" id="translate-div">
+
+        <p class="clean">
+            <label for="bad_text">Please paste or type the improper translation</label>
+        </p>
+        <div id="part-one">
+            <p>
+                <span style="display: none" id="bad-i18n-text-error" class="error-message">We could not find that string on this page.</span><textarea class="act_as_block textinput" rows="3" cols="40" id="bad-i18n-text" name="bad_text" autocomplete="off" style="width: 1px; "></textarea>
+            </p>
+            <div id="bad-i18n-text-complete" class="autocomplete" style="display: none; ">
+            </div>
+        </div>
+        <div id="part-two">
+            <div style="margin-bottom: 10px" id="translation-msg-display" class="emo hotbox">
+            </div>
+            <p class="clean">
+                Original English text
+            </p>
+            <div style="margin-bottom: 10px" id="translation-orig-msg-display" class="green-hotbox">
+            </div>
+            <p class="clean">
+                <label for="suggested_text">Suggested translation</label>
+            </p>
+            <p>
+                <textarea rows="3" cols="40" name="suggested_text" class="textinput act_as_block" style="width: 1px; "></textarea>
+            </p>
+            <p class="clean">
+                <label for="explanation">Explanation of the problem</label>
+            </p>
+            <p>
+                <textarea rows="3" cols="40" name="explanation" class="textinput act_as_block" style="width: 1px; "></textarea>
+            </p>
+            <div class="modal-buttons">
+                <input onclick="TranslationSuggest.start_wizard(event);return false;" type="button" id="translation-back-button" value="Back" class="freshbutton"><input type="submit" onclick="TranslationSuggest.submit_suggest(event); return false;" value="Suggest translation" class="freshbutton-blue">
+            </div>
+        </div>
+    </form>
+</div>
+<div id="notify-wrapper">
+    <span style="display: none;" id="notify"><span id="notify-msg">Sorry, there was a problem loading this page.</span></span>
+</div>
+<div id="outer-frame">
+    <div id="page-header">
+        <div id="account-header">
+            <ul class="nav">
+
+            </ul>
+        </div>
+    </div>
+    <div id="page-logo-header" class="">
+        <a href="https://www.justinzollars.com/"><img data-hi-res="/static/images/new_logo_2x.png" src="http://www.justinzollars.com/apps/new_logo.png" alt="Classclick home" id="db-logo"></a>
+        <div id="header-border-div">
+        </div>
+    </div>
+
+    <div id="page-content">
+        <div style="width: 85%; margin: 0 auto;">
+            <img id="big-iphone" src="http://www.justinzollars.com/apps/iphone_big.png" alt="">
+            <h1>Clicker.io for iPhone</h1>
+            <ul class="blue-bullets">
+                <li>Ask your classroom interactive questions</li>
+                <li>See streaming results live on mobile devices</li>
+                <li>No expensive equipment to purchase</li>
+                <li>Share freely with students and colleagues</li>
+            </ul>
+            <br>
+            <p style="margin-bottom:0;">
+                <a href="http://class-click.meteor.com" class="freshbutton-big">
+                <img src="http://www.justinzollars.com/apps/buttonbox.png" alt="Clicker.io Button" class="download-icon">
+                Download for iPhone </a>
+            </p>
+        </div>
+    </div>
+   
+      
+</div>
+
+<div style="position: absolute; top: 0; left: 0; font-family: Courier" id="ieconsole">
+</div>
+<div style="position:absolute; top:-10000px;width:0px; height:0px; left: 0;" id="FB_HiddenContainer">
+</div>
+<div style="display:none;" id="notice-container" class="clearfix">
+</div>
+
+</body>
+</html>
