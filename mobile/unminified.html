@@ -1,0 +1,189 @@
+<html><head>
+  <meta name="bitcoin" content="1G5mFAvdPj2iQLGr3CGYnvvT3kcECW8vEY" />
+  <meta http-equiv="Cache-control" content="public">
+  <meta content='Justin Zollars' property='og:title'>
+  <meta content='http://jz.io' property='og:url'>
+  <meta content='Justin Zollars' property='og:site_name'>
+  <meta content='website' property='og:type'>
+  <meta content='http://jz.io/200x200.png' property='og:image'>
+  <meta content="Justin's place on the web, his homebase, his blog, his soapbox. All things Fundraising, politics, campaigns, elections, crowdfunding, website, rails, republicans, democrats, justin zollars, justin, news, views, jz, life" property='og:description'>
+  <meta content="Justin's place on the web, his homebase, his blog, his soapbox. Fundraising, politics, campaigns, election, crowdfunding, website, rails, republicans, democrats, justin zollars, justin, news, views, jz, life" name='description'>
+  <meta content='Fundraising, politics, campaigns, election, crowdfunding, website, rails, republicans, democrats, justin zollars, justin, news, views, jz' name='keywords'>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <title>justinzollars</title>
+  <link href="http://jz.io/stylesheets/style.css" media="screen" rel="stylesheet" type="text/css">
+
+  <script>
+(function () {
+    function AnimateDot() {
+      // stle of drawing
+        e.globalCompositeOperation = "source-over";
+        // color and size of rectangle background
+        e.fillStyle = "rgba(8,8,12,0.65)";
+        e.fillRect(0, 0, width, height);
+        e.globalCompositeOperation = "lighter";
+
+        x = q - u;
+        y = r - v;
+        u = q;
+        v = r;
+        for (var d = 0.86 * width, l = 0.125 * width, m = 0.5 * width, t = Math.random, n = Math.abs, dotindex = dots; dotindex--;) {
+            e.font = "34pt Courier New";
+              e.fillStyle = "gray";
+              e.fillText("jz.io", 80, 50);
+            var dot = ArrayofDots[dotindex],
+                i = dot.x,
+                j = dot.y,
+                a = dot.a,
+                b = dot.b,
+                c = i - q,
+                k = j - r,
+                g = Math.sqrt(c * c + k * k) || 0.001,
+                c = c / g,
+                k = k / g;
+            if (w && g < m) var s = 14 * (1 - g / m),
+                a = a + (c * s + 0.5 - t()),
+                b = b + (k * s + 0.5 - t());
+            g < d && (s = 0.0014 * (1 - g / d) * width, a -= c * s, b -= k * s);
+            g < l && (c = 2.6E-4 * (1 - g / l) * width, a += x * c, b += y * c);
+            a *= B;
+            b *= B;
+            c = n(a);
+            k = n(b);
+            g = 0.5 * (c + k);
+            0.1 > c && (a *= 3 * t());
+            0.1 > k && (b *= 3 * t());
+            c = 0.45 * g;
+            c = Math.max(Math.min(c, 3.5), 0.4);
+            i += a;
+            j += b;
+            i > width ? (i = width, a *= -1) : 0 > i && (i = 0, a *= -1);
+            j > height ? (j = height, b *= -1) : 0 > j && (j = 0, b *= -1);
+            dot.a = a;
+            dot.b = b;
+            dot.x = i;
+            dot.y = j;
+            e.fillStyle = dot.color;
+            e.beginPath();
+            e.arc(i, j, c, 0, D, !0);
+            e.closePath();
+            e.fill()
+
+        }
+    }
+    function MouseMove(d) {
+        d = d ? d : window.event;
+        q = d.clientX - m.offsetLeft - n.offsetLeft;
+        r = d.clientY - m.offsetTop - n.offsetTop
+    }
+    function UserClick() {
+        w = !0;
+        return !1
+    }
+    function Clickrelease() {
+        return w = !1
+    }
+
+    function DrawDot() {
+        this.color = "rgb(" + Math.floor(255 * Math.random()) + "," + Math.floor(255 * Math.random()) + "," + Math.floor(255 * Math.random()) + ")";
+        this.b = this.a = this.x = this.y = 0;
+        this.size = 1
+    }
+    var D = 2 * Math.PI,
+        width = 1000,
+        height = 75,
+        dots = 11,
+        B = 0.96,
+        ArrayofDots = [],
+        o, e, n, m, q, r, x, y, u, v, w, pressed;
+    window.onload = function () {
+        o = document.getElementById("mainCanvas");
+        if (o.getContext) {
+            m = document.getElementById("outer");
+            n = document.getElementById("canvasContainer");
+            e = o.getContext("2d");
+            for (var d = dots; d--;) {
+                var l = new DrawDot;
+                l.x = 0.5 * width;
+                l.y = 0.5 * height;
+                l.a = 34 * Math.cos(d) * Math.random();
+                l.b = 34 * Math.sin(d) * Math.random();
+                ArrayofDots[d] = l
+            }
+            q = u = 0.5 * width;
+            r = v = 0.5 * height;
+            document.onmousedown = UserClick;
+            document.onmouseup = Clickrelease;
+            document.onmousemove = MouseMove;
+            // window.onkeypress = Foo;
+            // function Foo() {
+            //   pressed = event.keyCode;
+            //   if (pressed == 56) {
+            //     UserClick();
+            //   }
+            //   if (pressed == 50) {
+            //     Clickrelease();
+            //   }
+            // }
+            setInterval(AnimateDot, 33);
+        } else document.getElementById("output").innerHTML = "You need a better web browser"
+    }
+})();
+</script>
+</head>
+<body>
+    <div id="outer">
+    <div id="canvasContainer">
+      <canvas id="mainCanvas" width="1000" height="75"></canvas>
+      <div id="output"></div>
+    </div>
+  </div>
+  
+  <ul id="links" class="jk">
+  <li>
+      <a href="http://github.com/fogonthedowns/">
+        github
+        <span>Social coding</span>
+      </a>
+    </li>
+    <li>
+   </li><li>
+      <a href="http://www.linkedin.com/pub/justin-zollars/34/71/a54">
+        Linkedin
+        <span>Network with me<span>
+      </span></span></a>
+    </li>
+
+    <li>
+      <a href="http://jz.io/cv/cv.pdf">
+        CV
+        <span>Learn about what I do</span>
+      </a>
+    </li>
+    <li><a href="http://twitter.com/justinzollars">
+        Twitter 
+        <span>Random daily musings and some cool links!</span>
+      </a>
+    </li>
+    <li>
+      <a href="http://stackoverflow.com/users/165448/jz">
+        Stackoverflow
+        <span>Ruby on Rails questions and answers</span>
+      </a>
+    </li>
+  </ul>
+
+
+<script type="text/javascript">
+var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+</script>
+
+<script type="text/javascript">
+try {
+var pageTracker = _gat._getTracker("UA-142796-1");
+pageTracker._trackPageview();
+} catch(err) {}</script>
+
+
+</body></html>
