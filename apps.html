@@ -38,7 +38,7 @@
                 <img ng-src={{product["artworkUrl60"]}} height="35px" width="35px"/>
               </td>
               <td> {{product["description"] | limitTo:letterLimit}} </td>
-              <td> {{"free"}} </td>
+              <td> {{product["formattedPrice"]}} </td>
             </tr>
           </tbody>
         </table>
