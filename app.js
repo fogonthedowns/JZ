@@ -3,20 +3,32 @@
   app.controller('AppController', ['$http', '$scope', function($http, $scope){
    var store = this;
    $scope.letterLimit = 140;
+   $scope.search = "justinzollars"
    $scope.$watch('search', function (newValue, oldValue) {
       if (newValue==undefined) {
         console.log('newValue=' + newValue);
       } else {
-        $http.get('https://itunes.apple.com/search?term=' + (newValue || "justinzollars" )+'&country=us&entity=software&limit=10').success(function(data){
-          store.products = data["results"];
-        });
+
+       $scope.searchme($scope.search).then(function(result) {
+            $scope.data = result.data;
+              store.products = result.data["results"]
+            });
       }
     });
 
-    $http.get('https://itunes.apple.com/search?term=' + ($scope.search || "justinzollars" )+'&country=us&entity=software&limit=10').success(function(data){
-      store.products = data["results"];
-    });
-
+    $scope.searchme = function(sQuery) {
+             console.log(sQuery);
+             return $http.jsonp('http://itunes.apple.com/search', {
+                    params: {
+                        "callback": "JSON_CALLBACK",
+                        "term": sQuery,
+                        "country": "us",
+                        "entity":"software",
+                        "limit":"10"
+                    }
+                });
+           };
     store.products = [];
   }]);
-})();
+}
+)();
