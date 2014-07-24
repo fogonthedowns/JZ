@@ -30,5 +30,13 @@
            };
     store.products = [];
   }]);
+
+  app.directive("appTable", function() {
+    return {
+      restrict: "E",
+      templateUrl: "app-table.html"
+    };
+  });
+
 }
 )();

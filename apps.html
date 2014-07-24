@@ -6,7 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="description" content="">
   <meta name="author" content="">
-  <title>Hello World, AngularJS - ViralPatel.net</title>
+  <title>Chemistry Calculator Pro - IOS App</title>
   <link rel="stylesheet" type="text/css" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css" />
   <link rel="stylesheet" type="text/css" href="footer.css" />
   <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/angularjs/1.2.19/angular.min.js"></script>
@@ -18,40 +18,16 @@
       <div class="page-header">
         <h1>Apps</h1>
       </div>
-
         Search:
         <input type="text" ng-model="search" />
-        <table class="table">
-          <thead>
-            <tr>
-              <th>#</th>
-              <th>icon</th>
-              <th>description</th>
-              <th>cost</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr ng-repeat="product in itunesApp.products">
-              <td>{{$index + 1}}</td>
-              <td>
-                <a ng-href={{product["trackViewUrl"]}} />
-                <img ng-src={{product["artworkUrl60"]}} height="35px" width="35px"/>
-              </td>
-              <td> {{product["description"] | limitTo:letterLimit}} </td>
-              <td> {{product["formattedPrice"]}} </td>
-            </tr>
-          </tbody>
-        </table>
+        <app-table></app-table>
     </div>
 
      <div class="footer">
         <div class="container">
-          <p class="text-muted">Justin Zollars</p>
+          <a href="http://jz.io"><p class="text-muted">jz.io</p></a>
         </div>
      </div>
 
   </body>
 </html>
-
-
-
