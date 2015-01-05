@@ -1,101 +1,88 @@
 <!DOCTYPE html>
+<HTML>
 <meta charset="utf-8">
 <title>Bar Chart with Negative Values</title>
-<style>
+  <style>
+  body {
+    font-family: "jaf-bernino-sans","Lucida Grande","Lucida Sans Unicode","Lucida Sans",Geneva,Verdana,sans-serif;
+    letter-spacing: -0.02em;
+    font-weight: 400;
+    font-style: normal;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    -moz-font-feature-settings: "liga" on;
+    color: rgba(0,0,0,0.8);
+    font-size: 18px;
+    line-height: 1.4;
+  }
+  h1{
+    text-rendering: optimizeLegibility;
+    font-size: 64px;
+    font-weight: 300;
+    letter-spacing: -2px;
+    margin: .3em 0 .1em 0;
+    -webkit-margin-before: 0.67em;
+    -webkit-margin-after: 0.67em;
+    -webkit-margin-start: 0px;
+    -webkit-margin-end: 0px;
+    font-family: "Helvetica Neue", Helvetica, sans-serif;
 
-h1{
-  text-rendering: optimizeLegibility;
-  font-size: 64px;
-  font-weight: 300;
-  letter-spacing: -2px;
-  margin: .3em 0 .1em 0;
-  -webkit-margin-before: 0.67em;
-  -webkit-margin-after: 0.67em;
-  -webkit-margin-start: 0px;
-  -webkit-margin-end: 0px;
-  font-family: "Helvetica Neue", Helvetica, sans-serif;
-}
-.bar.positive {
-  fill: steelblue;
+  }
 
-}
+  .content {
+    padding-left: 3em;
+    padding-right: 3em;
+  }
 
-.bar.negative {
-  fill: brown;
-}
+  .quote {
+    padding-left: 1em;
+    padding-right: 1em;
+  }
 
-.axis text {
-  font: 10px sans-serif;
-}
+  .bar.positive {
+    fill: steelblue;
 
-.axis path,
-.axis line {
-  fill: none;
-  stroke: #000;
-  shape-rendering: crispEdges;
-}
+  }
 
-</style>
+  .bar.negative {
+    fill: brown;
+  }
+
+  .axis text {
+    font: 10px sans-serif;
+  }
+
+  .axis path,
+  .axis line {
+    fill: none;
+    stroke: #000;
+    shape-rendering: crispEdges;
+  }
+
+  </style>
 <body>
-<h1>Bar Chart</h1>
-<script src="http://d3js.org/d3.v3.min.js"></script>
-<script>
+<div class="content">
+<h1>Fall down, get up</h1>
 
-var margin = {top: 30, right: 10, bottom: 10, left: 10},
-    width = 960 - margin.left - margin.right,
-    height = 500 - margin.top - margin.bottom;
+<p>Over Christmas break I enjoy learning how people in the real world interact with technology. I had my mom show me the technology she uses in the classroom. She showed me <a href="https://www.classdojo.com/">ClassDojo</a>, an application that is used by teachers across the United States. I was not super impressed with the technology, but I was impressed with their ability to capture a market. In a nutshell ClassDojo is a platform for teachers that allows them to upload their student rosters and communicate directly with parents on the progress of their children. It is highly successful. I was left with the thought, “boy I could have created this application”. On a similar note, in 2013 my team created a project called redmeetsblue which allowed campaigns to fundraise online. We could never really get the site to take off, we had fierce competition with more general payment platforms such as <a href="https://www.tilt.com/">tilt</a> and <a href="https://www.kickstarter.com/">kickstarter</a> but even within the space of elections, we competed directly with Nationbuilder. Independently, we were able to match the technologies of tilt and kickstarter at a better price. <a href="http://nationbuilder.com/">Nationbuilder</a> is a worse product, poorly designed and expensive. rmb was abandoned because a lack of traction. Our latest project, <a href="https://www.youtube.com/watch?v=inFSew2zoQY">trysolved</a> was almost funded with a <a href="http://www.ycombinator.com/">$120,000 investment</a>, but as soon as the investors expressed concerns with our business model we quickly abandoned the project and concept.</p>
 
-var x = d3.scale.linear()
-    .range([0, width])
+<p>What could I be doing wrong? Its clear the teams I work with are highly talented, have the ability to design awesome applications, create beautiful interfaces, are highly motivated, energetic and even offer more value.
 
-var y = d3.scale.ordinal()
-    .rangeRoundBands([0, height], .2);
+<p>The first problem I want to address is our ability to market applications. Building an Application is not enough. We need to have the courage to go into the real world, talk about our project, create mailing lists, blogs, podcasts and hit the phones. In many cases I have seen us create superior technologies, have better ideas than others or create more beautiful designs then our competition. So I think our first reaction to a project that starts to have trouble should be - How can we market this better?
+We also need to have the courage to value our work. Having the best price does not always equal a win in the market. People may not value our work if we do not charge.</p>
 
-var xAxis = d3.svg.axis()
-    .scale(x)
-    .orient("top");
+<p>I think the biggest problem we will need to overcome in 2015 are really personal, perhaps in our own minds, which can be our worst enemy. <a href="http://paulbuchheit.blogspot.com/2014/07/the-technology.html">Paul Buchheit</a> expresses this concept beautifully in his section “Kill all daemon processes”. To quote him directly:</p>
 
-var svg = d3.select("body").append("svg")
-    .attr("width", width + margin.left + margin.right)
-    .attr("height", height + margin.top + margin.bottom)
-  .append("g")
-    .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
+<p><em><div class="quote">“The more insidious loops are the voices of doubt, anger, and self-loathing that infect our minds. Often they are the internalized voices of our parents, peers, the media, or just random people on the Internet. Other times, they pose as our own voice, possibly one that has been there for as long as we can remember. Either way, these loops are often parasitic and limiting.”</p>
 
-d3.tsv("data.tsv", type, function(error, data) {
-  console.log(data);
-  x.domain(d3.extent(data, function(d) { return d.value; })).nice();
-  y.domain(data.map(function(d) { return d.name; }));
+<p>“Creating an innovative new product often means spending years working on something that most people doubt the value of. It's hard to do that with a head full of noise, voices telling us that we're being foolish and should just cut our losses.”</em></div></p>
 
-  svg.selectAll(".bar")
-      .data(data)
-    .enter().append("rect")
-      .attr("class", function(d) { return d.value < 0 ? "bar negative" : "bar positive"; })
-      .attr("x", function(d) { return x(Math.min(0, d.value)); })
-      .attr("y", function(d) { return y(d.name); })
-      .attr("width", function(d) { return Math.abs(x(d.value) - x(0)); })
-      .attr("height", y.rangeBand());
+<p>If we are truly serious about our commitment to build something innovative and great, We need to commit to being determined and ignoring our doubts and more importantly the doubts of others.</p>
 
-  svg.append("g")
-      .attr("class", "x axis")
-      .call(xAxis);
+<p>Our most successful project is a <a href="https://itunes.apple.com/us/app/solved-app/id898657936">Chemistry App</a>, designed beautifully and simply.  The feature advancements, were driven because of customer feedback. Others features were added to drive revenue. We optimized for user growth, and we did not give up - even on something as ridiculous as a Chemistry Calculator.</p>
 
-  svg.append("g")
-      .attr("class", "y axis")
-    .append("line")
-      .attr("x1", x(0))
-      .attr("x2", x(0))
-      .attr("y2", height);
-
-});
-
-function type(d) {
-  d.value = +d.value;
-  return d;
-}
-
-</script>
-
-<p>One advantage of Y Combinator's early, broad focus is that we see trends before most other people. And one of the most conspicuous trends in the last batch was the large number of hardware startups. Out of 84 companies, 7 were making hardware. On the whole they've done better than the companies that weren't.
-
+<p>Its my personal goal to create a successful startup, run a payroll, create a company culture, and build a beautiful product and I want to reiterate my thanks for working with me and my commitment to you that we will make it happen for all of us.</p>
+</div>
 </body>
 </html>
