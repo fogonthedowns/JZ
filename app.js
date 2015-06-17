@@ -3,7 +3,7 @@
   app.controller('AppController', ['$http', '$scope', function($http, $scope){
    var store = this;
    $scope.letterLimit = 140;
-   $scope.search = "justinzollars"
+   $scope.search = "solved app - chemistry"
    $scope.$watch('search', function (newValue, oldValue) {
       if (newValue==undefined) {
         console.log('newValue=' + newValue);
